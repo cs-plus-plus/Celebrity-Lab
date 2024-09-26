@@ -15,26 +15,24 @@ The Celebrity Game is a Java-based project designed to teach students object-ori
 - Learn the rules of the Celebrity game and brainstorm a computer-based implementation.
 - Identify necessary classes, instance variables, and methods for the game.
 - Design a `play` method for the game class.
+- Write unit tests for the initial setup and method design.
 
 ### **Activity 2: The Celebrity Class**
 - Create the `Celebrity` class with appropriate constructors and methods.
 - Understand the purpose of constructors and how they are used in class initialization.
-- Write tests to verify the correct functionality of the `Celebrity` class.
+- Write unit tests to verify the correct functionality of the `Celebrity` class.
 
 ### **Activity 3: Putting It All Together**
 - Integrate the `Celebrity` class into the `CelebrityGame`.
 - Set up GUI components including `StartPanel` and `CelebrityPanel`.
-- Implement methods like `prepareGame`, `validateCelebrity`, `validateClue`, `addCelebrity`, `play`, `getCelebrityGameSize`, `processGuess`, and `sendClue`.
+- Implement methods like `prepareGame`, `validateCelebrity`, `validateClue`, `addCelebrity`, and `play`.
+- Write unit tests to validate GUI integration and game behavior.
 
 ### **Activity 4: Extending the Celebrity Class**
 - Extend the `Celebrity` class by creating a subclass (e.g., `LiteratureCelebrity`).
 - Add attributes and behaviors specific to the subclass.
 - Update the GUI to support the new subclass.
-
-### **Activity 5: Open-Ended Activity**
-- Work collaboratively to create a program involving a superclass and at least one subclass.
-- Utilize polymorphism by overriding methods in the subclass.
-- Implement and test the program, then answer reflective questions on the implementation process.
+- Write unit tests to validate inheritance and subclass behavior.
 
 ## Project Structure
 
@@ -67,13 +65,43 @@ The Celebrity Game is a Java-based project designed to teach students object-ori
 ## Scoring Guidelines
 
 Points are distributed across the activities as follows:
-- **Activity 1**: 10 points
-- **Activity 2**: 20 points
-- **Activity 3**: 25 points
-- **Activity 4**: 25 points
-- **Activity 5**: 20 points
 
-Total: 100 points
+| Activity                | Points |
+|-------------------------|--------|
+| **Activity 1**: Introduction to Celebrity | 20     |
+| **Activity 2**: The Celebrity Class       | 25     |
+| **Activity 3**: Putting It All Together   | 30     |
+| **Activity 4**: Extending the Celebrity Class | 25  |
+| **Total**:                               | **100**|
+
+---
+
+## Unit Tests Overview
+
+### **Unit Test 1: Activity 1 - Initial Game Setup**
+- **Tests**:
+  - Correct initialization of `CelebrityGame`.
+  - Ensure the initial list of celebrities is empty.
+  - Verify that methods like `play` are correctly defined but not yet fully implemented.
+
+### **Unit Test 2: Activity 2 - The Celebrity Class**
+- **Tests**:
+  - Verify `Celebrity` constructor is correctly implemented.
+  - Ensure instance variables are set up properly.
+  - Test that getter methods (`getClue`, `getAnswer`) work as expected.
+
+### **Unit Test 3: Activity 3 - Game Methods and GUI Integration**
+- **Tests**:
+  - Ensure that methods such as `addCelebrity`, `validateCelebrity`, `validateClue`, and `prepareGame` are implemented and work as expected.
+  - Verify GUI components like `StartPanel` and `CelebrityPanel` interact correctly with the game logic.
+
+### **Unit Test 4: Activity 4 - Inheritance and Subclass Integration**
+- **Tests**:
+  - Validate the correct implementation of a subclass of `Celebrity` (e.g., `LiteratureCelebrity`).
+  - Ensure that methods like `getClue` are correctly overridden in the subclass.
+  - Test that subclass instances integrate correctly with the `CelebrityGame`.
+
+---
 
 ## Support
 
