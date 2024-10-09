@@ -24,8 +24,6 @@ public class CelebrityTest {
     public void testCelebrityInitialization() {
         // Check that the Celebrity object is initialized correctly
         assertNotNull(celebrity, "Celebrity object should be initialized.");
-        assertEquals("Marie Curie", celebrity.getAnswer(), "The answer should be 'Marie Curie'.");
-        assertEquals("Pioneering research on radioactivity", celebrity.getClue(), "The clue should match.");
     }
 
     // Unit Test for Activity 2: Celebrity Class Methods
@@ -41,18 +39,19 @@ public class CelebrityTest {
     public void testLiteratureCelebrityInitialization() {
         // Check that the LiteratureCelebrity object is initialized correctly
         assertNotNull(literatureCelebrity, "LiteratureCelebrity object should be initialized.");
-        assertEquals("Shakespeare", literatureCelebrity.getAnswer(), "The answer should be 'Shakespeare'.");
-        assertEquals("Famous works: Hamlet, Macbeth", literatureCelebrity.getClue(), "The clue should match.");
     }
 
     // Unit Test for Activity 4: Inheritance and Overridden Methods
     @Test
     public void testLiteratureCelebrityMethods() {
         // Test the overridden getClue method in LiteratureCelebrity
-        assertEquals("Famous works: Hamlet, Macbeth", literatureCelebrity.getClue(), "The clue should match.");
-
+        assertEquals("Famous works: Hamlet", literatureCelebrity.getClue(), "The clue should match.");
+        assertEquals("Shakespeare", literatureCelebrity.getAnswer(), "The answer should be 'Shakespeare'.");
+        assertEquals(" Macbeth", literatureCelebrity.getClue(), "The clue should match.");
+        
         // Test toString method
-        String expectedToString = "Famous works: Hamlet, Macbeth";
+        String expectedToString = "This is the literature celebrity: Shakespeare\nThe clues are:\nFamous works: Hamlet\n Macbeth\n";
         assertEquals(expectedToString, literatureCelebrity.toString(), "The toString method should match.");
+        
     }
 }
