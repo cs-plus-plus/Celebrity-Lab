@@ -1,0 +1,61 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: 'testInitialGameSetupAndDesign '
+      id: testinitialgamesetupanddesign
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: 'testInitialGameSetupAndDesign '
+        setup-command: mvn compile
+        command: mvn -Dtest=CelebrityTest#testInitialGameSetupAndDesign test
+        timeout: 3
+        max-score: 20
+    - name: testCelebrityClassFunctionality
+      id: testcelebrityclassfunctionality
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testCelebrityClassFunctionality
+        setup-command: mvn compile
+        command: mvn -Dtest=CelebrityTest#testCelebrityClassFunctionality test
+        timeout: 3
+        max-score: 25
+    - name: 'testGameMethodsAndGUIIntegration '
+      id: testgamemethodsandguiintegration
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: 'testGameMethodsAndGUIIntegration '
+        setup-command: mvn compile
+        command: mvn -Dtest=CelebrityTest#testGameMethodsAndGUIIntegration test
+        timeout: 3
+        max-score: 30
+    - name: 'testInheritanceAndSubclassIntegration '
+      id: testinheritanceandsubclassintegration
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: 'testInheritanceAndSubclassIntegration '
+        setup-command: mvn compile
+        command: mvn -Dtest=CelebrityTest#testInheritanceAndSubclassIntegration
+          test
+        timeout: 3
+        max-score: 25
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        TESTINITIALGAMESETUPANDDESIGN_RESULTS: "${{steps.testinitialgamesetupanddesign.outputs.result}}"
+        TESTCELEBRITYCLASSFUNCTIONALITY_RESULTS: "${{steps.testcelebrityclassfunctionality.outputs.result}}"
+        TESTGAMEMETHODSANDGUIINTEGRATION_RESULTS: "${{steps.testgamemethodsandguiintegration.outputs.result}}"
+        TESTINHERITANCEANDSUBCLASSINTEGRATION_RESULTS: "${{steps.testinheritanceandsubclassintegration.outputs.result}}"
+      with:
+        runners: testinitialgamesetupanddesign,testcelebrityclassfunctionality,testgamemethodsandguiintegration,testinheritanceandsubclassintegration
