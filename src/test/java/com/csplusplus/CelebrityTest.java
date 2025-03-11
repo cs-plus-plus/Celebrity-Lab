@@ -54,16 +54,16 @@ public class CelebrityTest {
         // Test the overridden getClue method in LiteratureCelebrity
         assertEquals("Famous works: Hamlet", literatureCelebrity.getClue(), "The clue should match.");
         assertEquals("Shakespeare", literatureCelebrity.getAnswer(), "The answer should be 'Shakespeare'.");
-        assertEquals(" Macbeth", literatureCelebrity.getClue(), "The clue should match.");
+        assertEquals("Macbeth", literatureCelebrity.getClue(), "The clue should match.");
         
         assertEquals("Wrote Computer Science Principles", literatureCelebrity2.getClue(), "The clue should match.");
         assertEquals("Kevin Hare", literatureCelebrity2.getAnswer(), "The answer should be 'Shakespeare'.");
-        assertEquals(" Runs CS++", literatureCelebrity2.getClue(), "The clue should match.");
+        assertEquals("Runs CS++", literatureCelebrity2.getClue(), "The clue should match.");
         
         // Test toString method
-        String expectedToString = "This is the literature celebrity: Shakespeare\nThe clues are:\nFamous works: Hamlet\n Macbeth\n";
+        String expectedToString = "This is the literature celebrity: Shakespeare\nThe clues are:\nFamous works: Hamlet\nMacbeth\n";
         assertEquals(expectedToString, literatureCelebrity.toString(), "The toString method should match.");
-        expectedToString = "This is the literature celebrity: Kevin Hare\nThe clues are:\nWrote Computer Science Principles\n Runs CS++\n";
+        expectedToString = "This is the literature celebrity: Kevin Hare\nThe clues are:\nWrote Computer Science Principles\nRuns CS++\n";
         assertEquals(expectedToString, literatureCelebrity2.toString(), "The toString method should match.");
         
     }
